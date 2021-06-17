@@ -14,7 +14,7 @@ modules:
         - Asserts
         - REST:
             depends: PhpBrowser
-            url: 'http://api.izze.xyz/test'
+            url: 'http://api.izze.xyz/test/'
     
     config:
         PhpBrowser:
