@@ -7,7 +7,17 @@
 actor: AcceptanceTester
 modules:
     enabled:
-        - PhpBrowser:
-            url: http://localhost/myapp
+        - WebDriver:
+            url: https://www.saucedemo.com
+            browser: chrome
+            host: localhost
+            port: 9515
+            window_size: 1440x900
+            capabilities:
+             chromeOptions:
+                 args: ["--headless", "--disable-gpu"]
+                 prefs:
+                     download.default_directory: "..."
         - \Helper\Acceptance
-step_decorators: ~        
+        - Asserts
+step_decorators: ~
