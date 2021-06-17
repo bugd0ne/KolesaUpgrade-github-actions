@@ -23,7 +23,7 @@ class UserCest
         $I->haveHttpHeader('Content-Type', 'application/json');
         $I->sendPost(Urls::$createUser, $body);
         $I->seeResponseCodeIsSuccessful();
-        $I->seeResponseContainsJson(["status" => "not ok"]);
+        $I->seeResponseContainsJson(["status" => "ok"]);
         // grab _id for PUT
         $userId = implode($I->grabDataFromResponseByJsonPath('$._id'));
         // get request for getting info about posted user
