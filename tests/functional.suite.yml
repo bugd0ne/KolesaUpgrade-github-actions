@@ -8,6 +8,15 @@
 actor: FunctionalTester
 modules:
     enabled:
-        # add a framework module here
+        - PhpBrowser
         - \Helper\Functional
+        - \Helper\BaseHelper
+        - Asserts
+        - REST:
+            depends: PhpBrowser
+            url: 'http://api.izze.xyz/test/'
+    
+    config:
+        PhpBrowser:
+            url: 'http://api.izze.xyz/test/'
     step_decorators: ~        
